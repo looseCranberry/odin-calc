@@ -5,138 +5,17 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>DI-108 Calculator</title>
-		<style>
-			@font-face {
-				font-family: ChakraPetch;
-				src: url(ChakraPetch-Regular.ttf);
-			}
-			p {
-			}
-			h1 {
-				margin: 0;
-				font-size: 32px;
-			}
-			img {
-				margin: 4px;
-			}
-			body {
-				margin: 0;
-				padding: 0;
-				font-size: 12px;
-				font-family: ChakraPetch;
-			}
-			main {
-				padding: 12px;
-				width: 21em;
-				margin: 12px auto;
-				border-radius: 6px;
-				background-color: rgb(40, 80, 140);
-				box-shadow: 4px 4px rgb(35, 75, 135);
-			}
-			button {
-				border-radius: 4px;
-				text-align: left;
-				font-weight: 800;
-				width: 52px;
-				margin: 4px 2px;
-				height: 28px;
-				border: 1px solid rgb(10, 15, 60);
-				box-shadow: 1px 1px rgb(10, 15, 60);
-			}
-			#output {
-				font-size: 36px;
-				color: rgb(25, 45, 45);
-				opacity: 75%;
-			}
-			.screen-container {
-				margin: 0;
-				padding: 3px 4px;
-				border-radius: 4px;
-				background-color: rgb(115, 140, 135);
-			}
-			.screen {
-				margin: 0;
-				text-align: right;
-				border-radius: 4px;
-				border-left: 2px solid rgb(80, 115, 100);
-				border-top: 2px solid rgb(80, 115, 100);
-				border-right: 1px solid rgb(80, 115, 100);
-				border-bottom: 1px solid rgb(80, 115, 100);
-				background-color: rgb(125, 155, 140);
-			}
-			.container {
-				display: flex;
-			}
-			.columnar {
-				flex-direction: column;
-			}
-			.solar-container {
-				color: white;
-				display: flex;
-				flex-direction: column;
-			}
-			.solar-panel {
-				margin: 0;
-				padding: 0;
-				display: flex;
-			}
-			.left-cell,
-			.right-cell,
-			.solar-cell {
-				width: 32px;
-				height: 36px;
-				border: 1px solid black;
-				border-top: 2px solid black;
-				background-color: rgb(50, 75, 70);
-			}
-			.left-cell {
-				border-left: 2px solid black;
-				border-top-left-radius: 4px;
-				border-bottom-left-radius: 4px;
-			}
-			.right-cell {
-				border-top-right-radius: 4px;
-				border-bottom-right-radius: 4px;
-			}
-			.model-container {
-				color: white;
-				margin: 2px 4px;
-			}
-			.command-container {
-				justify-content: space-between;
-				display: flex;
-				padding: 4px;
-				border: 3px solid rgb(40, 75, 130);
-			}
-			.red {
-				color: white;
-				background-color: rgb(210, 50, 55);
-			}
-			.white {
-				color: rgb(40, 80, 140);
-				background-color: white;
-			}
-			.left-side {
-				display: flex;
-				flex-direction: column;
-			}
-			.right-side {
-				display: flex;
-				flex-direction: column;
-			}
-			.row {
-				display: flex;
-			}
-			.equals {
-				height: 64px;
-			}
-		</style>
+		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
 		<main>
 			<div class="screen-container">
-				<div class="screen">
-					<h1 id="output">1234567890.0</h1>
+				<div class="screen container">
+					<div class="container columnar">
+						<h1 class="tiny"><em>M</em></h1>
+						<h1 class="tiny-minus">-</h1>
+					</div>
+					<h1 id="output">123450.0</h1>
 				</div>
 			</div>
 			<div class="container">
@@ -159,42 +38,42 @@
 			<div class="command-container">
 				<div class="left-side">
 					<div class="row">
-						<button class="red"><sup>(</sup></button>
-						<button class="red"><sup>)</sup></button>
-						<button class="red"><sup>&Sqrt;</sup></button>
+						<button id="opNegate" class="red"><sup>&plus;|&minus;</sup></button>
+						<button id="opSqrt" class="red"><sup>&Sqrt; sqrt</sup></button>
+						<button id="opPercent" class="red"><sup>&percnt;</sup></button>
 					</div>
 					<div class="row">
-						<button class="red"><sup>&plus;|&minus;</sup></button>
-						<button class="red"><sup>mod</sup></button>
-						<button class="red"><sup>exp</sup></button>
+						<button id="memRecall" class="red"><sup>MRC</sup></button>
+						<button id="memMinus" class="red"><sup>M&minus;</sup></button>
+						<button id="memPlus" class="red"><sup>M&plus;</sup></button>
 					</div>
 					<div class="row">
-						<button class="white"><sup>7</sup></button>
-						<button class="white"><sup>8</sup></button>
-						<button class="white"><sup>9</sup></button>
+						<button id="num7" class="white"><sup>7</sup></button>
+						<button id="num8" class="white"><sup>8</sup></button>
+						<button id="num9" class="white"><sup>9</sup></button>
 					</div>
 					<div class="row">
-						<button class="white"><sup>4</sup></button>
-						<button class="white"><sup>5</sup></button>
-						<button class="white"><sup>6</sup></button>
+						<button id="num4" class="white"><sup>4</sup></button>
+						<button id="num5" class="white"><sup>5</sup></button>
+						<button id="num6" class="white"><sup>6</sup></button>
 					</div>
 					<div class="row">
-						<button class="white"><sup>1</sup></button>
-						<button class="white"><sup>2</sup></button>
-						<button class="white"><sup>3</sup></button>
+						<button id="num1" class="white"><sup>1</sup></button>
+						<button id="num2" class="white"><sup>2</sup></button>
+						<button id="num3" class="white"><sup>3</sup></button>
 					</div>
 					<div class="row">
-						<button class="red"><sup>ON/C</sup></button>
-						<button class="white"><sup>0</sup></button>
-						<button class="white"><sup>.</sup></button>
+						<button id="opClear" class="red"><sup>ON/C</sup></button>
+						<button id="num0" class="white"><sup>0</sup></button>
+						<button id="opDot" class="white"><sup>.</sup></button>
 					</div>
 				</div>
 				<div class="right-side">
-					<button class="red"><sup>&divide;</sup></button>
-					<button class="red"><sup>&times;</sup></button>
-					<button class="red"><sup>&minus;</sup></button>
-					<button class="red"><sup>&plus;</sup></button>
-					<button class="red equals"><sup>&equals;</sup></button>
+					<button id="opDivide" class="red"><sup>&divide;</sup></button>
+					<button id="opTimes" class="red"><sup>&times;</sup></button>
+					<button id="opMinus" class="red"><sup>&minus;</sup></button>
+					<button id="opPlus" class="red"><sup>&plus;</sup></button>
+					<button id="opEquals" class="red equals"><sup>&equals;</sup></button>
 				</div>
 			</div>
 		</main>
