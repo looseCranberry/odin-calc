@@ -2,6 +2,11 @@
 	font-family: ChakraPetch;
 	src: url(ChakraPetch-Regular.ttf);
 }
+p {
+	margin: 0;
+	padding: 2px 0 0;
+	font-size: 10px;
+}
 h1 {
 	margin: 0;
 	font-size: 32px;
@@ -10,6 +15,10 @@ img {
 	margin: 4px;
 }
 body {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 	margin: 0;
 	padding: 0;
 	font-size: 12px;
@@ -17,7 +26,7 @@ body {
 }
 main {
 	padding: 12px;
-	width: 21em;
+	width: 255px;
 	margin: 12px auto;
 	border-radius: 6px;
 	background-color: rgb(40, 80, 140);
@@ -44,6 +53,7 @@ button:hover {
 	opacity: 75%;
 }
 .tiny {
+	height: 10px;
 	margin: 0;
 	padding: 0;
 	font-size: 10px;
@@ -52,11 +62,15 @@ button:hover {
 	opacity: 85%;
 }
 .tiny-minus {
+	height: 10px;
 	margin: 0;
 	padding: 0;
 	font-size: 18px;
 	color: rgb(25, 45, 45);
 	opacity: 85%;
+}
+.spacer {
+	justify-content: space-between;
 }
 .screen-container {
 	margin: 0;

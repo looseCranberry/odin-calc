@@ -6,23 +6,28 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>DI-108 Calculator</title>
 		<link rel="stylesheet" href="style.css" />
+		<script src="app.js" defer></script>
+		<script></script>
 	</head>
 	<body>
 		<main>
 			<div class="screen-container">
 				<div class="screen container">
 					<div class="container columnar">
-						<h1 class="tiny"><em>M</em></h1>
-						<h1 class="tiny-minus">-</h1>
+						<h1 id="mSign" class="tiny"><em>M</em></h1>
+						<h1 id="negSign" class="tiny-minus">-</h1>
 					</div>
 					<h1 id="output">123450.0</h1>
 				</div>
 			</div>
-			<div class="container">
+			<div class="container spacer">
 				<div class="solar-container">
 					<div class="container">
 						<img src="texas.png" height="28px" width="30px" />
-						<p>Dallas Industriments</p>
+						<div class="container columnar">
+							<p>Dallas</p>
+							<p>Industriments</p>
+						</div>
 					</div>
 					<div class="solar-panel">
 						<div class="left-cell"></div>
@@ -35,45 +40,45 @@
 					<h1>DI-108</h1>
 				</div>
 			</div>
-			<div class="command-container">
+			<div id="commandContainer" class="command-container">
 				<div class="left-side">
 					<div class="row">
-						<button id="opNegate" class="red"><sup>&plus;|&minus;</sup></button>
-						<button id="opSqrt" class="red"><sup>&Sqrt; sqrt</sup></button>
-						<button id="opPercent" class="red"><sup>&percnt;</sup></button>
+						<button id="oSgn" class="red"><sup>&plus;|&minus;</sup></button>
+						<button id="oSqr" class="red"><sup>&Sqrt; sqrt</sup></button>
+						<button id="oPrc" class="red"><sup>&percnt;</sup></button>
 					</div>
 					<div class="row">
-						<button id="memRecall" class="red"><sup>MRC</sup></button>
-						<button id="memMinus" class="red"><sup>M&minus;</sup></button>
-						<button id="memPlus" class="red"><sup>M&plus;</sup></button>
+						<button id="mMRC" class="red"><sup>MRC</sup></button>
+						<button id="mSub" class="red"><sup>M&minus;</sup></button>
+						<button id="mAdd" class="red"><sup>M&plus;</sup></button>
 					</div>
 					<div class="row">
-						<button id="num7" class="white"><sup>7</sup></button>
-						<button id="num8" class="white"><sup>8</sup></button>
-						<button id="num9" class="white"><sup>9</sup></button>
+						<button id="n7" class="white"><sup>7</sup></button>
+						<button id="n8" class="white"><sup>8</sup></button>
+						<button id="n9" class="white"><sup>9</sup></button>
 					</div>
 					<div class="row">
-						<button id="num4" class="white"><sup>4</sup></button>
-						<button id="num5" class="white"><sup>5</sup></button>
-						<button id="num6" class="white"><sup>6</sup></button>
+						<button id="n4" class="white"><sup>4</sup></button>
+						<button id="n5" class="white"><sup>5</sup></button>
+						<button id="n6" class="white"><sup>6</sup></button>
 					</div>
 					<div class="row">
-						<button id="num1" class="white"><sup>1</sup></button>
-						<button id="num2" class="white"><sup>2</sup></button>
-						<button id="num3" class="white"><sup>3</sup></button>
+						<button id="n1" class="white"><sup>1</sup></button>
+						<button id="n2" class="white"><sup>2</sup></button>
+						<button id="n3" class="white"><sup>3</sup></button>
 					</div>
 					<div class="row">
-						<button id="opClear" class="red"><sup>ON/C</sup></button>
-						<button id="num0" class="white"><sup>0</sup></button>
-						<button id="opDot" class="white"><sup>.</sup></button>
+						<button id="oCls" class="red"><sup>ON/C</sup></button>
+						<button id="n0" class="white"><sup>0</sup></button>
+						<button id="oDot" class="white"><sup>.</sup></button>
 					</div>
 				</div>
 				<div class="right-side">
-					<button id="opDivide" class="red"><sup>&divide;</sup></button>
-					<button id="opTimes" class="red"><sup>&times;</sup></button>
-					<button id="opMinus" class="red"><sup>&minus;</sup></button>
-					<button id="opPlus" class="red"><sup>&plus;</sup></button>
-					<button id="opEquals" class="red equals"><sup>&equals;</sup></button>
+					<button id="oDiv" class="red"><sup>&divide;</sup></button>
+					<button id="oMul" class="red"><sup>&times;</sup></button>
+					<button id="oSub" class="red"><sup>&minus;</sup></button>
+					<button id="oAdd" class="red"><sup>&plus;</sup></button>
+					<button id="oEql" class="red equals"><sup>&equals;</sup></button>
 				</div>
 			</div>
 		</main>
